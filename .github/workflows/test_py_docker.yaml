@@ -28,11 +28,26 @@ jobs:
       run: |
         bandit -r code/python
   
-  # unittest:
-  #   runs-on: ubuntu-latest
+  unittest:
+    runs-on: ubuntu-latest
+    needs: linters
 
-  #   steps:
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4 
+    
+    - name: Set up python
+      uses: actions/setup-python@v3
+      with:
+        python-version: 3.9
 
+    - name: Requirements
+      run: |
+        pip install -r code/requirements.txt
+    
+    - name: test code
+      run: |
+        python -m unittest code/python
 
 
 
