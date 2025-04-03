@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+    - name: logging
+      run: echo "Running"
     - name: Run linters
       run: |
         flake8 code/python
