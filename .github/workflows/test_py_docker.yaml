@@ -22,7 +22,7 @@ jobs:
 
     - name: Run linters
       run: |
-        flake8 code/python/main.py
+        flake8 code/python
 
     - name: Run security checks
       run: |
