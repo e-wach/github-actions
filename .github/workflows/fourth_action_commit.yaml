@@ -1,4 +1,4 @@
-name: third action
+name: fourth action
 
 on: ## se pueden poner varios eventos
   push: ## solo push sería = que branches: '*'

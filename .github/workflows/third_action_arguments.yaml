@@ -1,4 +1,4 @@
-name: fourth action
+name: third action
 
 on:
   workflow_dispatch:
