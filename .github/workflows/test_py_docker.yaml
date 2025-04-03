@@ -10,7 +10,7 @@ jobs:
     steps:
     - name: Requirements
       run: |
-        pip install -r ../../code/requirements.txt
+        pip install -r ${{ github.workspace }}/code/requirements.txt
     - name: Run linters
       run: |
         flake8 code/python
