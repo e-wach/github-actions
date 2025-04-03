@@ -1,0 +1,13 @@
+name: first_action ## nombre del workflow
+
+on:
+  workflow_dispatch: ## evento
+
+jobs:
+  say_hello: ## nombre del job
+    runs_on: ubuntu-latest ## tipo de runner
+    
+    steps:
+      - name: first step
+        run: echo "Hello there" ## acción a realizar en el job
+
