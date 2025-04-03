@@ -1,0 +1,33 @@
+name: second action
+
+on:
+  workflow_dispatch:
+    inputs: 
+      debug_mode:
+        type: boolean
+        description: Debug
+        default: false
+        required: false
+      debug_mode:
+        type: string
+        description: cualquier valor
+        default: ""
+        required: false
+
+jobs:
+  say_hello:
+    runs-on: ubuntu-latest 
+    steps:
+      - name: first step
+        run: echo "Hello"
+      - name: second step
+        run: echo "there"
+  say_back:
+    runs-on: ubuntu-latest
+    needs: say_hello
+    steps:
+      - name: first step
+        run: echo "Hello"
+      - name: second step
+        run: echo "you"
+
