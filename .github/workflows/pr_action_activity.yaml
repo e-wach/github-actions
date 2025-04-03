@@ -10,7 +10,7 @@ jobs:
 
     steps:
     - name: first step
-
       run: echo "label status changed"
     - name: second step
       run: echo $ {{github.event.types.labels }}
+
