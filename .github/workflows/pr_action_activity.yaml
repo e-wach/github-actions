@@ -10,11 +10,7 @@ jobs:
 
     steps:
     - name: first step
-<<<<<<< Updated upstream
+
       run: echo "label status changed"
     - name: second step
       run: echo $ {{github.event.types.labels }}
-
-=======
-      run: echo "label status changed!!"
->>>>>>> Stashed changes
