@@ -8,7 +8,7 @@ on:
         description: Debug
         default: false
         required: false
-      debug_mode:
+      sample_value:
         type: string
         description: cualquier valor
         default: ""
