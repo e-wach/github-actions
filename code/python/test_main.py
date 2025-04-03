@@ -1,6 +1,4 @@
 import unittest
-from io import StringIO
-import sys
 
 def add(a, b):
     return a + b

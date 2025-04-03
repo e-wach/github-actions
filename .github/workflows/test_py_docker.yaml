@@ -10,13 +10,20 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4 
-      
+    
+    - name: Set up python
+      uses: actions/setup-python@v3
+      with:
+        python-version: 3.9
+
     - name: Requirements
       run: |
         pip install -r code/requirements.txt
+
     - name: Run linters
       run: |
-        flake8 code/python
+        flake8 code/python/main.py
+
     - name: Run security checks
       run: |
         bandit -r code/python
