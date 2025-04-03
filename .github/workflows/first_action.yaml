@@ -5,8 +5,7 @@ on:
 
 jobs:
   say_hello: ## nombre del job
-    runs_on: ubuntu-latest ## tipo de runner
-    
+    runs-on: ubuntu-latest ## tipo de runner
     steps:
       - name: first step
         run: echo "Hello there" ## acción a realizar en el job
