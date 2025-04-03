@@ -25,7 +25,7 @@ jobs:
     needs: say_hello
     steps:
       - name: first step
-        run: echo "Hello"
+        run: echo "hallooo"
       - name: second step
         run: echo "${{ github.event.inputs.debug_mode }} "
 
