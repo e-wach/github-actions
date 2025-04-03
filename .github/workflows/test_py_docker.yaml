@@ -6,7 +6,7 @@ on:
 jobs:
   linters:
     runs-on: ubuntu-latest
-    
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4 
@@ -48,8 +48,27 @@ jobs:
     - name: test code
       run: |
         python -m unittest discover -s code -p "test_main.py"
+        
+    - name: Run security checks
+      run: |
+        bandit -r code/python
 
+  docker:
+    runs-on: ubuntu-latest
+    needs: unittest
 
+    steps:
+    - name: Login to Dockerhub
+      uses: docker/login-action@v3
+      with:
+        username: ${{ vars.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+    - name: Build and push
+      uses: docker/build-push-action@v6
+      with:
+        push: true
+        tags: user/app:latest
 
 
 
