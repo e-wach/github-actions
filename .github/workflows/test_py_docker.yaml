@@ -1,0 +1,20 @@
+name: Test Python and Docker
+
+on:
+  push:
+
+jobs:
+  linters:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Run linters
+      run: |
+        flake8 code/python
+    - name: Run security checks
+      run: |
+        bandit -r code/python
+
+
+
+
