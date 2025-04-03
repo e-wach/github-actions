@@ -47,7 +47,7 @@ jobs:
     
     - name: test code
       run: |
-        python -m unittest code.test_main
+        python -m unittest code/test_main.py
 
 
 
