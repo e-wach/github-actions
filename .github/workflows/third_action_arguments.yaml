@@ -2,16 +2,16 @@ name: third action
 
 on:
   workflow_dispatch:
-    inputs: 
+    inputs: ## aparece cuando le das a run workflow en github
       debug_mode:
-        type: boolean
+        type: boolean ## casilla para seleccionar
         description: Debug
         default: false
         required: false
       sample_value:
-        type: string
+        type: string ## caja para escribir
         description: cualquier valor
-        default: ""
+        default: "" 
         required: false
 
 jobs:
@@ -29,5 +29,5 @@ jobs:
       - name: first step
         run: echo "Hello"
       - name: second step
-        run: echo "you"
+        run: echo ${{ github.event.inputs.debug_mode }}
 
